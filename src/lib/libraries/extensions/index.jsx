@@ -6,6 +6,9 @@ import {APP_NAME} from '../../brand';
 import musicIconURL from './music/music.png';
 import musicInsetIconURL from './music/music-small.svg';
 
+import chatgptIconUrl from './penguinmod/extensions/chatgpt.png';
+import chatgptInsetIconURL from './penguinmod/extensions/chatgpt.svg';
+
 import penIconURL from './pen/pen.png';
 import penInsetIconURL from './pen/pen-small.svg';
 
@@ -308,6 +311,18 @@ const menuItems = [
             />
         ),
         featured: true
+    },
+    {
+        name: 'ChatGPT',
+        extensionId: 'https://raw.githubusercontent.com/kokofixcomputers/scratch-extension-collection/main/downloads/chatgpt_scratch_extensions.js',
+        collaborator: 'OpenAI',
+        iconURL: chatgptInsetIconURL,
+        insetIconURL: chatgptIconUrl,
+        tags: ['ai', 'orangemod'],
+        description: 'Add the power of ChatGPT to your projects!',
+        extDeveloper: 'kokofixcomputers',
+        featured: true,
+        internetConnectionRequired: true,
     },
     {
         name: 'Stage Camera',
@@ -1299,7 +1314,7 @@ if (IsLocal || IsLiveTests) {
         },
         {
             name: 'Test Extension Loader',
-            href: 'https://studio.penguinmod.com/loadExt.html',
+            href: 'https://kokodevelopment.github.io/loadExt.html',
             extensionId: 'special_testExtensionLibrary',
             iconURL: defaultExtensionIcon,
             description: 'Test loading extensions from a library. For developers.',
@@ -1307,7 +1322,7 @@ if (IsLocal || IsLiveTests) {
         },
         {
             name: 'Editor',
-            href: 'https://studio.penguinmod.com/editor.html',
+            href: 'https://kokodevelopment.github.io/editor.html',
             extensionId: 'special_editorExtensionLibrary',
             iconURL: penguinmodLibraryExtensionIcon,
             description: 'Opens the editor with this tab as the parent, still with the library opened. For developers.',
