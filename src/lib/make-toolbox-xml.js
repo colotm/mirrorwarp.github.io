@@ -1191,6 +1191,28 @@ const operators = function (isInitialSetup) {
                     </shadow>
                 </value>
             </block>
+            <block type="operator_join4">
+                <value name="STRING1">
+                    <shadow type="text">
+                        <field name="TEXT">${apple} </field>
+                    </shadow>
+                </value>
+                <value name="STRING2">
+                    <shadow type="text">
+                        <field name="TEXT">${banana} </field>
+                    </shadow>
+                </value>
+                <value name="STRING3">
+                    <shadow type="text">
+                        <field name="TEXT">pear</field>
+                    </shadow>
+                </value>
+                <value name="STRING4">
+                    <shadow type="text">
+                        <field name="TEXT">peach</field>
+                    </shadow>
+                </value>
+            </block>
             ${blockSeparator}
             <block type="operator_indexOfTextInText">
                 <value name="TEXT1">
