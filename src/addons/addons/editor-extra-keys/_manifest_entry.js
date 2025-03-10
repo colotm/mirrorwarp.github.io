@@ -3,7 +3,9 @@ const manifest = {
   "editorOnly": true,
   "name": "Extra key options",
   "description": "Adds more keys to the \"key () pressed?\" and \"when () key pressed\" block dropdowns, such as enter, dot, comma, and more. These keys will work even for users who do not have this addon.",
-  "tags": [],
+  "tags": [
+    "beta"
+  ],
   "credits": [
     {
       "name": "Tacodiva",
@@ -47,7 +49,7 @@ const manifest = {
       "name": "Show TurboWarp keys",
       "id": "twKeys",
       "type": "boolean",
-      "default": false
+      "default": true
     }
   ],
   "userscripts": [
@@ -55,6 +57,7 @@ const manifest = {
       "url": "userscript.js"
     }
   ],
-  "dynamicDisable": true
+  "dynamicDisable": true,
+  "enabledByDefault": true
 };
 export default manifest;

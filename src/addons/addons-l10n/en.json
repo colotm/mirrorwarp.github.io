@@ -1,4 +1,6 @@
 {
+    "copy-reporter/copy-to-clipboard": "Copy",
+    "copy-reporter/copy-value": "copy value",
     "editor-devtools/clean-plus": "Clean up Blocks +",
     "editor-devtools/copy-all": "Copy All",
     "editor-devtools/copy-block": "Copy Block",
@@ -14,30 +16,16 @@
     "editor-devtools/var-not-exist": "That variable does not exist...",
     "editor-devtools/variables": "variables",
     "find-bar/complex-broadcast": "(expression)",
-    "find-bar/event": "event {name}",
     "find-bar/find-placeholder": "Find (Ctrl+F)",
-    "find-bar/list-global": {
-        "string": "LIST {name}",
-        "developer_comment": "Uppercase 'LIST' refers to a global list."
-    },
-    "find-bar/list-local": {
-        "string": "list {name}",
-        "developer_comment": "Lowercase 'list' refers to a local list."
-    },
-    "find-bar/var-global": {
-        "string": "VAR {name}",
-        "developer_comment": "Uppercase 'VAR' refers to a global variable."
-    },
-    "find-bar/var-local": {
-        "string": "var {name}",
-        "developer_comment": "Lowercase 'var' refers to a local variable."
-    },
     "middle-click-popup/start-typing": "Start Typing...",
     "editor-searchable-dropdowns/createBroadcast": "Create message \"{name}\"",
     "editor-searchable-dropdowns/createGlobalList": "Create list \"{name}\" for all sprites",
     "editor-searchable-dropdowns/createGlobalVariable": "Create variable \"{name}\" for all sprites",
     "editor-searchable-dropdowns/createLocalList": "Create list \"{name}\" for this sprite only",
     "editor-searchable-dropdowns/createLocalVariable": "Create variable \"{name}\" for this sprite only",
+    "data-category-tweaks-v2/for-all-sprites": "For all sprites:",
+    "data-category-tweaks-v2/for-this-sprite-only": "For this sprite only:",
+    "data-category-tweaks-v2/list-category": "Lists",
     "hide-flyout/lock": "Lock Palette",
     "hide-flyout/unlock": "Unlock Palette",
     "mediarecorder/cancel": "Cancel",
@@ -48,7 +36,7 @@
     "mediarecorder/record-after-flag": "Do not start recording until the Green Flag is clicked",
     "mediarecorder/record-audio": "Include project sounds",
     "mediarecorder/record-audio-description": "This does not include Text-to-Speech.",
-    "mediarecorder/record-description": "Record the stage as a {extension} file. You can save it to your computer after the recording is finished.\nNote: variable and list monitors will not be visible.",
+    "mediarecorder/record-description": "Record the stage as an MP4 or WebM file. You can save it to your computer after the recording is finished.\nNote: variable and list monitors will not be visible.",
     "mediarecorder/record-duration": "Record Duration (in seconds)",
     "mediarecorder/record-mic": "Include sounds from microphone",
     "mediarecorder/record-until-stop": "Stop recording after the project has stopped",
@@ -87,7 +75,6 @@
     "debugger/unknown-sprite": "(unknown sprite)",
     "debugger/unpause": "Resume",
     "pause/pause": "Pause",
-    "pause/play": "Resume",
     "clones/clones": "clones: {cloneCount}",
     "color-picker/hex": "hex color",
     "remove-sprite-confirm/confirm": "Do you want to delete the sprite?",
@@ -153,7 +140,7 @@
     "gamepad/no-controllers": "No controllers detected. Try plugging one in and pressing a button on it.",
     "gamepad/reset": "Reset all controls to project defaults",
     "gamepad/settings": "Gamepad Settings",
-    "gamepad/store-in-project": "Store the mappings set above inside the project. After saving the project, these mappings will become the new default configuration.",
+    "gamepad/store-in-project": "Store these settings in the project to override the default configuration (Experimental tool for project creators)",
     "folders/add-to-folder": "add to folder: {folder}",
     "folders/closed-folder": "Folder",
     "folders/confirm-backpack-folder": "Save entire folder to backpack?",
@@ -265,7 +252,5 @@
     "swap-local-global/edit-variable-option": "Rename or edit variable",
     "swap-local-global/to-global": "Convert to \"For all sprites\"",
     "swap-local-global/to-local": "Convert to \"For this sprite only\"",
-    "hide-stage/hide-stage": "Hide stage",
-    "copy-reporter/copy-to-clipboard": "Copy",
-    "copy-reporter/copy-value": "copy value"
+    "hide-stage/hide-stage": "Hide stage"
 }

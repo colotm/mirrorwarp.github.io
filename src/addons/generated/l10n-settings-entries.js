@@ -2,7 +2,6 @@
 export default {
   "de": () => require("../addons-l10n-settings/de.json"),
   "es": () => require("../addons-l10n-settings/es.json"),
-  "fi": () => require("../addons-l10n-settings/fi.json"),
   "fr": () => require("../addons-l10n-settings/fr.json"),
   "hu": () => require("../addons-l10n-settings/hu.json"),
   "it": () => require("../addons-l10n-settings/it.json"),
@@ -15,6 +14,4 @@ export default {
   "ru": () => require("../addons-l10n-settings/ru.json"),
   "sl": () => require("../addons-l10n-settings/sl.json"),
   "tr": () => require("../addons-l10n-settings/tr.json"),
-  "zh-cn": () => require("../addons-l10n-settings/zh-cn.json"),
-  "zh-tw": () => require("../addons-l10n-settings/zh-tw.json"),
 };

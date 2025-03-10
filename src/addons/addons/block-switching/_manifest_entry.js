@@ -10,6 +10,10 @@ const manifest = {
     {
       "name": "pufferfish101007",
       "link": "https://scratch.mit.edu/users/pufferfish101007/"
+    },
+    {
+      "name": "JeremyGamer13",
+      "link": "https://penguinmod.com/profile?user=JGamerTesting"
     }
   ],
   "dynamicDisable": true,
@@ -99,25 +103,25 @@ const manifest = {
     },
     {
       "dynamic": true,
-      "name": "Custom block parameters",
+      "name": "Custom block arguments",
       "id": "customargs",
       "type": "boolean",
       "default": true
     },
     {
       "dynamic": true,
-      "name": "Shown custom block parameters options",
+      "name": "Shown custom block arguments options",
       "id": "customargsmode",
       "type": "select",
       "default": "defOnly",
       "potentialValues": [
         {
           "id": "defOnly",
-          "name": "Parameters in own custom block"
+          "name": "Arguments in own custom block"
         },
         {
           "id": "all",
-          "name": "Parameters in all custom blocks in sprite"
+          "name": "Arguments in all custom blocks in sprite"
         }
       ],
       "if": {

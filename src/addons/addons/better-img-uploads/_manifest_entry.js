@@ -53,11 +53,11 @@ const manifest = {
         },
         {
           "id": "fill",
-          "name": "Stretch to fill canvas"
+          "name": "Stretch to fill stage"
         },
         {
           "id": "fit",
-          "name": "Shrink to fit canvas"
+          "name": "Shrink to fit stage"
         }
       ],
       "default": "fit"

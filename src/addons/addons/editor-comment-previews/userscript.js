@@ -32,7 +32,6 @@ export default async function ({ addon, console }) {
   previewInner.classList.add("sa-comment-preview-hidden");
   updateStyles();
   addon.settings.addEventListener("change", updateStyles);
-  addon.tab.displayNoneWhileDisabled(previewOuter);
   previewOuter.appendChild(previewInner);
   document.body.appendChild(previewOuter);
 
@@ -49,7 +48,7 @@ export default async function ({ addon, console }) {
       }
       const id = procedurePrototype.id;
       return Object.values(vm.editingTarget.blocks._blocks).find(
-        (i) => i.opcode === "procedures_definition" && i.inputs.custom_block && i.inputs.custom_block.block === id
+        (i) => (i.opcode === "procedures_definition" || i.opcode === "procedures_definition_return") && i.inputs.custom_block && i.inputs.custom_block.block === id
       );
     }
     return null;
@@ -99,6 +98,7 @@ export default async function ({ addon, console }) {
       !e.target.closest("line")
     ) {
       const collapsedText = el.querySelector("text.scratchCommentText");
+      if (!collapsedText) return;
       if (collapsedText.getAttribute("display") !== "none") {
         const textarea = el.querySelector("textarea");
         text = textarea.value;

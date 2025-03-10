@@ -195,17 +195,14 @@ function createBlockContainer() {
  * Creates a block component from a container containing all its components.
  * @param {SVGElement} container The block container, created by {@link createBlockContainer}.
  * @param {object} shape An object containing information of the shape of the block to be created. From the {@link BlockShapes} object.
- * @param {string|null} categoryClass The category of the block, used for filling the background.
+ * @param {string} categoryClass The category of the block, used for filling the background.
  * @param {string} fill
  * @param {string} stroke
  * @param {number} width The width of the background of the block.
  */
 function createBlockComponent(container, shape, categoryClass, fill, stroke, width) {
   if (width < shape.minWidth) width = shape.minWidth;
-  container.classList.add("sa-block-color");
-  if (categoryClass) {
-    container.classList.add(categoryClass);
-  }
+  container.classList.add("sa-block-color", categoryClass);
   const background = container.children[0];
   let style = "";
   if (fill) style += `fill: var(${fill});`;
@@ -257,23 +254,7 @@ function _renderBlock(block, container, parentCategory, isVertical) {
   const blockContainer = container.appendChild(createBlockContainer());
   const shape = getShapeInfo(block.typeInfo.shape, isVertical);
   const category = block.typeInfo.category;
-
-  const COLOR_CLASSES = [
-    "motion",
-    "looks",
-    "sounds",
-    "events",
-    "control",
-    "sensing",
-    "operators",
-    "data",
-    "data-lists",
-    "list",
-    "more",
-    "pen",
-    "addon-custom-block"
-  ];
-  const categoryClass = COLOR_CLASSES.includes(category.name) ? "sa-block-color-" + category.name : null;
+  const categoryClass = "sa-block-color-" + String(category.name).replace(/[^a-z0-9\-_]+/gmi, '_');
 
   let xOffset = 0;
   let inputIdx = 0;
@@ -291,7 +272,7 @@ function _renderBlock(block, container, parentCategory, isVertical) {
       } else if (blockPart instanceof BlockInputEnum) {
         if (blockPart.isRound) {
           component = createBackedTextedComponent(
-            blockInput.string,
+            blockInput?.string ?? blockPart.values[0].string,
             blockContainer,
             BlockShapes.TextInput,
             categoryClass,
@@ -301,7 +282,7 @@ function _renderBlock(block, container, parentCategory, isVertical) {
           );
         } else {
           component = createBackedTextedComponent(
-            blockInput.string,
+            blockInput?.string ?? blockPart.values[0].string,
             blockContainer,
             BlockShapes.SquareInput,
             categoryClass,
@@ -336,7 +317,7 @@ function _renderBlock(block, container, parentCategory, isVertical) {
           blockContainer,
           BlockShapes.TextInput,
           categoryClass,
-          `--sa-block-input-color, ${category.colorColor}`,
+          `--sa-block-input-color, white`,
           `--sa-block-background-tertiary, ${category.colorTertiary}`,
           "--sa-block-input-text"
         );

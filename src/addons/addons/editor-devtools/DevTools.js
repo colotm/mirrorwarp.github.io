@@ -596,7 +596,7 @@ export default class DevTools {
         // console.log("I found a new block!!! - " + block.id);
         // todo: move the block to the mouse pointer?
         let mouseXYClone = { x: this.mouseXY.x, y: this.mouseXY.y };
-        block.setIntersects(true); // fixes offscreen block pasting in TurboWarp
+        block.setIntersects(true); // fixes offscreen block pasting in Turbo Warp
         this.domHelpers.triggerDragAndDrop(block.svgPath_, null, mouseXYClone);
       }
     }
@@ -634,7 +634,7 @@ export default class DevTools {
 
     let ctrlKey = e.ctrlKey || e.metaKey;
 
-    if (e.key === "ArrowLeft" && ctrlKey) {
+    if (e.keyCode === 37 && ctrlKey) {
       // Ctrl + Left Arrow Key
       if (document.activeElement.tagName === "INPUT") {
         return;
@@ -648,7 +648,7 @@ export default class DevTools {
       }
     }
 
-    if (e.key === "ArrowRight" && ctrlKey) {
+    if (e.keyCode === 39 && ctrlKey) {
       // Ctrl + Right Arrow Key
       if (document.activeElement.tagName === "INPUT") {
         return;

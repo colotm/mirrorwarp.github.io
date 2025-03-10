@@ -3,7 +3,7 @@ const manifest = {
   "editorOnly": true,
   "noTranslations": true,
   "name": "Auto-hiding block palette",
-  "description": "Hides the block palette unless you're hovering over it. Click the lock icon to lock it in place temporarily. Or use the \"category click\" mode to show/hide it when you click a block category.",
+  "description": "Hides the block palette if not hovered. Click the lock icon to lock it in place temporarily. Alternatively, use \"category click\" mode.",
   "credits": [
     {
       "name": "TheColaber",
@@ -109,12 +109,6 @@ const manifest = {
         }
       ],
       "default": "default"
-    },
-    {
-      "name": "Open by default",
-      "id": "lockLoad",
-      "type": "boolean",
-      "default": false
     }
   ],
   "tags": [

@@ -69,9 +69,6 @@ export default async function ({ addon, msg, console }) {
   document.addEventListener("mousemove", (e) => {
     mousePosition = { x: e.clientX, y: e.clientY };
   });
-  document.addEventListener("mousedown", (e) => {
-    mousePosition = { x: e.clientX, y: e.clientY };
-  }, { capture: true });
 
   onClearTextWidthCache(closePopup);
 
@@ -93,9 +90,7 @@ export default async function ({ addon, msg, console }) {
   let limited = false;
 
   let allowMenuClose = true;
-
   let popupPosition = null;
-  let popupOrigin = null;
 
   let previewWidth = 0;
   let previewHeight = 0;
@@ -109,7 +104,6 @@ export default async function ({ addon, msg, console }) {
     if (addon.self.disabled) return;
 
     // Don't show the menu if we're not in the code editor
-    if (addon.tab.editorMode !== "editor") return;
     if (addon.tab.redux.state.scratchGui.editorTab.activeTabIndex !== 0) return;
 
     blockTypes = BlockTypeInfo.getBlocks(Blockly, vm, Blockly.getMainWorkspace(), msg);
@@ -125,7 +119,9 @@ export default async function ({ addon, msg, console }) {
 
     popupContainer.style.width = previewWidth + "px";
 
-    popupOrigin = { x: mousePosition.x, y: mousePosition.y };
+    popupPosition = { x: mousePosition.x + 16, y: mousePosition.y - 8 };
+    popupRoot.style.top = popupPosition.y + "px";
+    popupRoot.style.left = popupPosition.x + "px";
     popupRoot.style.display = "";
     popupInput.value = "";
     popupInput.focus();
@@ -134,7 +130,6 @@ export default async function ({ addon, msg, console }) {
 
   function closePopup() {
     if (allowMenuClose) {
-      popupOrigin = null;
       popupPosition = null;
       popupRoot.style.display = "none";
       blockTypes = null;
@@ -173,7 +168,7 @@ export default async function ({ addon, msg, console }) {
 
       for (const queryResult of queryResults) {
         blockList.push({
-          block: queryResult.getBlock(),
+          block: queryResult.createBlock(),
           autocompleteFactory: (endOnly) => queryResult.toText(endOnly),
         });
       }
@@ -185,8 +180,20 @@ export default async function ({ addon, msg, console }) {
     // Create the new previews
     queryPreviews.length = 0;
     let y = 0;
+    let addedResults = 0;
+    const addedIds = [];
+
+    const maxSearchResults = addon.settings.get('popup_max_search');
+    const maxVariants = addon.settings.get("popup_max_variants");
     for (let resultIdx = 0; resultIdx < blockList.length; resultIdx++) {
+      if (addedResults >= maxSearchResults) break;
+
       const result = blockList[resultIdx];
+      if (maxVariants <= 1) {
+        if (addedIds.includes(result.block.typeInfo.id)) continue;
+      } else {
+        if (addedIds.filter(id => id === result.block.typeInfo.id).length >= maxVariants) continue;
+      }
 
       const mouseMoveListener = () => {
         updateSelection(resultIdx);
@@ -200,6 +207,7 @@ export default async function ({ addon, msg, console }) {
         selectBlock();
         allowMenuClose = true;
         if (e.shiftKey) popupInput.focus();
+        else closePopup();
       };
 
       const svgBackground = popupPreviewBlocks.appendChild(
@@ -229,6 +237,8 @@ export default async function ({ addon, msg, console }) {
       });
 
       y += height;
+      addedResults++;
+      addedIds.push(result.block.typeInfo.id);
     }
 
     const height = (y + 8) * previewScale;
@@ -242,17 +252,6 @@ export default async function ({ addon, msg, console }) {
     popupPreviewScrollbarSVG.style.height = previewHeight + "px";
     popupPreviewScrollbarBackground.setAttribute("height", "" + previewHeight);
     popupInputContainer.dataset["error"] = "" + limited;
-
-    popupPosition = { x: popupOrigin.x + 16, y: popupOrigin.y - 8 };
-
-    const popupHeight = popupContainer.getBoundingClientRect().height;
-    const popupBottom = popupPosition.y + popupHeight;
-    if (popupBottom > window.innerHeight) {
-      popupPosition.y -= popupBottom - window.innerHeight;
-    }
-
-    popupRoot.style.top = popupPosition.y + "px";
-    popupRoot.style.left = popupPosition.x + "px";
 
     selectedPreviewIdx = -1;
     updateSelection(0);
@@ -306,10 +305,16 @@ export default async function ({ addon, msg, console }) {
       const preview = queryPreviews[previewIdx];
 
       var blockX = 5;
-      if (blockX + preview.renderedBlock.width > previewWidth / previewScale)
-        blockX += (previewWidth / previewScale - blockX - preview.renderedBlock.width) * previewScale * cursorPosRel;
+      // pm: The pop-up can be resized, so we dont need to account for this actually
+      // if (blockX + preview.renderedBlock.width > previewWidth / previewScale)
+      //   blockX += (previewWidth / previewScale - blockX - preview.renderedBlock.width) * previewScale * cursorPosRel;
       var blockY = (y + 30) * previewScale;
 
+      // if (preview.block.typeInfo.shape.canBeRound) {
+      //   preview.svgBlock.setAttribute("transform", `translate(${blockX}, ${blockY}) scale(${previewScale})`);
+      // } else {
+      //   preview.svgBlock.setAttribute("transform", `translate(6, ${blockY}) scale(${previewScale})`);
+      // }
       preview.svgBlock.setAttribute("transform", `translate(${blockX}, ${blockY}) scale(${previewScale})`);
 
       y += getBlockHeight(preview.block);
@@ -332,7 +337,8 @@ export default async function ({ addon, msg, console }) {
     const scrollbarHeight = (previewHeight / scrollY) * previewHeight;
     const scrollbarY = (scrollTop / scrollY) * previewHeight;
 
-    popupPreviewScrollbarSVG.style.display = "";
+    // pm: whats the point of the scroll bar if it doesnt work?
+    popupPreviewScrollbarSVG.style.display = "none";
     popupPreviewScrollbarHandle.setAttribute("height", "" + scrollbarHeight);
     popupPreviewScrollbarHandle.setAttribute("y", "" + scrollbarY);
   }
@@ -432,7 +438,42 @@ export default async function ({ addon, msg, console }) {
     }
   });
 
-  popupInput.addEventListener("focusout", closePopup);
+  // pm: lets check other stuff before deciding we should close out (ie: scrolling with middle-click shouldnt close popup)
+  // popupInput.addEventListener("focusout", closePopup);
+
+  let closablePopup = true;
+  popupInput.addEventListener("focusout", () => {
+    if (closablePopup) {
+      closePopup();
+    }
+  });
+
+  popupContainer.addEventListener("mousedown", () => {
+    popupInput.focus();
+  });
+  popupContainer.addEventListener("mousemove", () => {
+    popupInput.focus();
+  });
+
+  popupContainer.addEventListener("mouseenter", () => {
+    closablePopup = false;
+    popupInput.focus();
+  });
+  popupContainer.addEventListener("mouseleave", () => {
+    closablePopup = true;
+    popupInput.focus();
+  });
+
+  // pm: whats the point of the scroll bar if it doesnt work?
+  // popupPreviewScrollbarSVG.addEventListener("mousedown", () => {
+  //   closablePopup = false;
+  // });
+  // popupPreviewScrollbarSVG.addEventListener("mouseup", () => {
+  //   setTimeout(() => {
+  //     closablePopup = true;
+  //     popupInput.focus();
+  //   }, 1);
+  // });
 
   // Open on ctrl + space
   document.addEventListener("keydown", (e) => {

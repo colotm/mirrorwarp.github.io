@@ -157,6 +157,24 @@ export default async function ({ addon, console, msg }) {
         },
         noopSwitch,
       ];
+      blockSwitches["looks_setShape"] = [
+        {
+          opcode: "looks_setShape",
+        },
+        noopSwitch,
+      ];
+      blockSwitches["looks_setColor"] = [
+        {
+          opcode: "looks_setColor",
+        },
+        noopSwitch,
+      ];
+      blockSwitches["looks_setFont"] = [
+        {
+          opcode: "looks_setFont",
+        },
+        noopSwitch,
+      ];
       blockSwitches["looks_nextcostume"] = [
         noopSwitch,
         {
@@ -685,6 +703,15 @@ export default async function ({ addon, console, msg }) {
         },
         noopSwitch,
       ];
+
+      if (vm.extensionManager) {
+        const switches = vm.extensionManager.getAddonBlockSwitches();
+        Object.getOwnPropertyNames(switches).forEach(extID => {
+          Object.getOwnPropertyNames(switches[extID]).forEach(block => {
+            blockSwitches[`${extID}_${block}`] = switches[extID][block];
+          })
+        })
+      }
     }
 
     if (addon.settings.get("sa")) {
@@ -751,7 +778,7 @@ export default async function ({ addon, console, msg }) {
    * @param {Element} xmlBlock
    */
   const pasteBlockXML = (workspace, xmlBlock) => {
-    // Similar to https://github.com/scratchfoundation/scratch-blocks/blob/7575c9a0f2c267676569c4b102b76d77f35d9fd6/core/workspace_svg.js#L1020
+    // Similar to https://github.com/LLK/scratch-blocks/blob/7575c9a0f2c267676569c4b102b76d77f35d9fd6/core/workspace_svg.js#L1020
     // but without the collision checking.
     const block = ScratchBlocks.Xml.domToBlock(xmlBlock, workspace);
     const x = +xmlBlock.getAttribute("x");
@@ -968,7 +995,7 @@ export default async function ({ addon, console, msg }) {
             }
           } else if (customArgsMode === "defOnly") {
             const root = block.getRootBlock();
-            if (root.type !== "procedures_definition") return items;
+            if (root.type !== "procedures_definition" || root.type !== "procedures_definition_return") return items;
             const customBlockObj = customBlocks[root.getChildren(true)[0].getProcCode()];
             switch (type) {
               case "argument_reporter_string_number":
@@ -1029,7 +1056,7 @@ export default async function ({ addon, console, msg }) {
     { blocks: true }
   );
 
-  // https://github.com/scratchfoundation/scratch-blocks/blob/abbfe93136fef57fdfb9a077198b0bc64726f012/blocks_vertical/procedures.js#L207-L215
+  // https://github.com/LLK/scratch-blocks/blob/abbfe93136fef57fdfb9a077198b0bc64726f012/blocks_vertical/procedures.js#L207-L215
   // Returns a list like ["%s", "%d"]
   const parseArguments = (code) =>
     code

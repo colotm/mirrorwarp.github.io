@@ -1,6 +1,6 @@
 import createScalePoints from "./genScalePoints.js";
+import createSnapPoints from "./genSnapPoints.js";
 import { loadModules, Modes, BitmapModes } from "./helpers.js";
-import { addons, initialize } from "./compatibility.js";
 
 import { snapOn, threshold, guideColor } from "./state.js";
 
@@ -8,8 +8,8 @@ const getScaleTool = (tool) => {
   return tool.boundingBoxTool._modeMap.SCALE;
 };
 
-export const updateScaleTool = (paper, tool, vm) => {
-  const lib = loadModules(paper, vm);
+export const updateScaleTool = (paper, tool) => {
+  const lib = loadModules(paper);
   const {
     view: { getActionBounds },
     layer: { getLayer },
@@ -17,7 +17,7 @@ export const updateScaleTool = (paper, tool, vm) => {
 
   const scaleTool = getScaleTool(tool);
 
-  // https://github.com/scratchfoundation/scratch-paint/blob/develop/src/helper/selection-tools/scale-tool.js
+  // https://github.com/LLK/scratch-paint/blob/develop/src/helper/selection-tools/scale-tool.js
   const MIN_SCALE_FACTOR = 0.0001;
 
   const selectionSizeGuide = {
@@ -200,7 +200,7 @@ export const updateScaleTool = (paper, tool, vm) => {
     axisLineY.visible = false;
   };
 
-  addons.paintSnap = function (event) {
+  scaleTool.constructor.prototype.onMouseDrag = function (event) {
     if (!this.active) return;
     const point = event.point;
     const bounds = getActionBounds(this.isBitmap);
@@ -501,8 +501,6 @@ export const updateScaleTool = (paper, tool, vm) => {
     this.lastSx = sx;
     this.lastSy = sy;
   };
-
-  initialize(paper, scaleTool.constructor);
 
   const oldMouseUp = scaleTool.constructor.prototype.onMouseUp;
   scaleTool.constructor.prototype.onMouseUp = function () {

@@ -11,23 +11,11 @@ const manifest = {
     },
     {
       "name": "GarboMuffin"
-    },
-    {
-      "name": "Mr_MPH",
-      "link": "https://scratch.mit.edu/users/Mr_MPH/"
     }
   ],
   "userscripts": [
     {
       "url": "userscript.js"
-    }
-  ],
-  "settings": [
-    {
-      "name": "Allow dragging while project is stopped",
-      "id": "drag_while_stopped",
-      "type": "boolean",
-      "default": false
     }
   ],
   "tags": [],
