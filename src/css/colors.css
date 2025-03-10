@@ -2,7 +2,7 @@ $ui-primary: var(--ui-primary, hsla(215, 100%, 95%, 1)); /* #E5F0FF */
 $ui-secondary: var(--ui-secondary, hsla(215, 75%, 95%, 1)); /* #E9F1FC */
 $ui-tertiary: var(--ui-tertiary, hsla(215, 50%, 90%, 1)); /* #D9E3F2 */
 
-$ui-modal-overlay: #D88033; /* Updated to #D88033 */
+$ui-modal-overlay: #D88033B3; /* Updated to #D88033 */
 
 $ui-white: hsla(0, 100%, 100%, 1); /* #FFFFFF */
 $ui-white-dim: hsla(0, 100%, 100%, 0.75); /* 25% transparent version of ui-white */
