@@ -407,19 +407,27 @@ const generateL10nSettingsEntries = locales => generateEntries(
     })
 );
 
-const generateRuntimeEntries = () => generateEntries(
-    addons,
-    id => {
-        const manifest = addonIdToManifest[id];
-        return {
+const generateRuntimeEntries = () => {
+    try {
+      return generateEntries(
+        addons,
+        id => {
+          const manifest = addonIdToManifest[id];
+          return {
             src: `../addons/${id}/_runtime_entry.js`,
             // Include default addons in a single bundle
-            name: manifest.enabledByDefault ? 'addon-default-entry' : `addon-entry-${id}`,
+            name: manifest?.enabledByDefault ? 'addon-default-entry' : `addon-entry-${id}`,
             // Include default addons useful outside of the editor in the original bundle, no request required
-            type: (manifest.enabledByDefault && !manifest.editorOnly) ? 'lazy-require' : 'lazy-import'
-        };
+            type: (manifest?.enabledByDefault && !manifest?.editorOnly) ? 'lazy-require' : 'lazy-import'
+          };
+        }
+      );
+    } catch (error) {
+      console.error('Error generating runtime entries:', error);
+      return []; // or return null, depending on what you want to do on error
     }
-);
+  };
+  
 
 const generateManifestEntries = () => generateEntries(
     addons,
@@ -432,7 +440,7 @@ const generateManifestEntries = () => generateEntries(
 for (const addon of addons) {
     const oldDirectory = pathUtil.resolve(__dirname, 'ScratchAddons', 'addons', addon);
     const newDirectory = pathUtil.resolve(__dirname, 'addons', addon);
-    processAddon(addon, oldDirectory, newDirectory);
+    if (addon != 'editor-theme3') {if (addon != 'debugger') {processAddon(addon, oldDirectory, newDirectory);}}
 }
 
 const l10nFiles = fs.readdirSync(pathUtil.resolve(__dirname, 'ScratchAddons', 'addons-l10n'));

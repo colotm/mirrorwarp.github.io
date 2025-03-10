@@ -12,7 +12,6 @@ const addons = [
     'mediarecorder',
     'drag-drop',
     'debugger',
-    'pause',
     'mute-project',
     'vol-slider',
     'clones',
