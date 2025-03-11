@@ -54,7 +54,7 @@ const Credits = () => (
     <main className={styles.main}>
         <header className={styles.headerContainer}>
             <h1 className={styles.headerText}>
-                PenguinMod Credits
+                OrangeMod Credits
             </h1>
         </header>
         <section>
@@ -63,8 +63,8 @@ const Credits = () => (
         <section>
             <h2>Thank you</h2>
             <p>
-                Without TurboWarp, PenguinMod may have never existed.
-                Thank you to everyone who worked on Scratch and TurboWarp,
+                Without Turbowarp and PenguinMod, OrangeMod may have never existed.
+                Thank you to everyone who worked on Scratch, TurboWarp, and PenguinMod,
                 you have made many people finally be able to make whatever they can imagine.
             </p>
             <a href="https://scratch.mit.edu/donate">
@@ -73,6 +73,9 @@ const Credits = () => (
             <br></br><br></br>
             <a href="https://github.com/sponsors/GarboMuffin">
                 Donate to support TurboWarp.
+            </a>
+            <a href="https://github.com/sponsors/kokofixcomputers">
+                Donate to support OrangeMod.
             </a>
             <h2>Contributors</h2>
             <p>
