@@ -64,7 +64,7 @@ export const initialState = {
     fileHandle: null,
     usernameInvalid: false,
     usernameLoggedIn: false,
-    hasCloudVariables: false,
+    hasCloudVariables: true,
     cloudHost: ''
 };
 
