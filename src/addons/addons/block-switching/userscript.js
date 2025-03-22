@@ -367,6 +367,9 @@ export default async function ({ addon, console, msg }) {
       blockSwitches["control_repeat_until"] = [
         noopSwitch,
         {
+          opcode: "control_while",
+        },
+        {
           opcode: "control_wait_until",
           splitInputs: ["SUBSTACK"],
         },
@@ -379,6 +382,9 @@ export default async function ({ addon, console, msg }) {
         {
           opcode: "control_repeat_until",
         },
+        {
+          opcode: "control_while",
+        },
         noopSwitch,
       ];
       blockSwitches["control_wait_until"] = [
@@ -387,6 +393,17 @@ export default async function ({ addon, console, msg }) {
         },
         noopSwitch,
       ];
+
+      blockSwitches["control_while"] = [
+        {
+          opcode: "control_repeat_until",
+        },
+        noopSwitch,
+        {
+          opcode: "control_forever",
+          splitInputs: ["CONDITION"],
+        },
+      ];
     }
 
     if (addon.settings.get("operator")) {
@@ -394,18 +411,36 @@ export default async function ({ addon, console, msg }) {
         {
           opcode: "operator_gt",
         },
-        noopSwitch,
+        {
+          opcode: "operator_gtorequal",
+        },
         {
           opcode: "operator_lt",
+        },
+        {
+          opcode: "operator_ltorequal",
+        },
+        noopSwitch,
+        {
+          opcode: "operator_notequal",
         },
       ];
       blockSwitches["operator_gt"] = [
         noopSwitch,
         {
-          opcode: "operator_equals",
+          opcode: "operator_gtorequal",
         },
         {
           opcode: "operator_lt",
+        },
+        {
+          opcode: "operator_ltorequal",
+        },
+        {
+          opcode: "operator_equals",
+        },
+        {
+          opcode: "operator_notequal",
         },
       ];
       blockSwitches["operator_lt"] = [
@@ -413,9 +448,72 @@ export default async function ({ addon, console, msg }) {
           opcode: "operator_gt",
         },
         {
+          opcode: "operator_gtorequal",
+        },
+        noopSwitch,
+        {
+          opcode: "operator_ltorequal",
+        },
+        {
+          opcode: "operator_equals",
+        },
+        {
+          opcode: "operator_notequal",
+        },
+      ];
+      blockSwitches["operator_notequal"] = [
+        {
+          opcode: "operator_gt",
+        },
+        {
+          opcode: "operator_gtorequal",
+        },
+        {
+          opcode: "operator_lt",
+        },
+        {
+          opcode: "operator_ltorequal",
+        },
+        {
           opcode: "operator_equals",
         },
         noopSwitch,
+      ];
+      blockSwitches["operator_gtorequal"] = [
+        {
+          opcode: "operator_gt",
+        },
+        noopSwitch,
+        {
+          opcode: "operator_lt",
+        },
+        {
+          opcode: "operator_ltorequal",
+        },
+        {
+          opcode: "operator_equals",
+        },
+        {
+          opcode: "operator_notequal",
+        },
+      ];
+      blockSwitches["operator_ltorequal"] = [
+        {
+          opcode: "operator_gt",
+        },
+        {
+          opcode: "operator_gtorequal",
+        },
+        {
+          opcode: "operator_lt",
+        },
+        noopSwitch,
+        {
+          opcode: "operator_equals",
+        },
+        {
+          opcode: "operator_notequal",
+        },
       ];
       blockSwitches["operator_add"] = [
         noopSwitch,
@@ -427,6 +525,9 @@ export default async function ({ addon, console, msg }) {
         },
         {
           opcode: "operator_divide",
+        },
+        {
+          opcode: "operator_power",
         },
         {
           opcode: "operator_mod",
@@ -444,6 +545,9 @@ export default async function ({ addon, console, msg }) {
           opcode: "operator_divide",
         },
         {
+          opcode: "operator_power",
+        },
+        {
           opcode: "operator_mod",
         },
       ];
@@ -459,6 +563,9 @@ export default async function ({ addon, console, msg }) {
           opcode: "operator_divide",
         },
         {
+          opcode: "operator_power",
+        },
+        {
           opcode: "operator_mod",
         },
       ];
@@ -471,6 +578,27 @@ export default async function ({ addon, console, msg }) {
         },
         {
           opcode: "operator_multiply",
+        },
+        noopSwitch,
+        {
+          opcode: "operator_power",
+        },
+        {
+          opcode: "operator_mod",
+        },
+      ];
+      blockSwitches["operator_power"] = [
+        {
+          opcode: "operator_add",
+        },
+        {
+          opcode: "operator_subtract",
+        },
+        {
+          opcode: "operator_multiply",
+        },
+        {
+          opcode: "operator_divide",
         },
         noopSwitch,
         {
@@ -490,6 +618,9 @@ export default async function ({ addon, console, msg }) {
         {
           opcode: "operator_divide",
         },
+        {
+          opcode: "operator_power",
+        },
         noopSwitch,
       ];
       blockSwitches["operator_and"] = [
@@ -501,6 +632,18 @@ export default async function ({ addon, console, msg }) {
       blockSwitches["operator_or"] = [
         {
           opcode: "operator_and",
+        },
+        noopSwitch,
+      ];
+      blockSwitches["operator_trueBoolean"] = [
+        noopSwitch,
+        {
+          opcode: "operator_falseBoolean",
+        },
+      ];
+      blockSwitches["operator_falseBoolean"] = [
+        {
+          opcode: "operator_trueBoolean",
         },
         noopSwitch,
       ];
