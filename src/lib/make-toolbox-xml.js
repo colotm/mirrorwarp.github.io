@@ -793,6 +793,7 @@ const sensing = function (isInitialSetup, isStage, targetId) {
                 <value name="SPRITETOUCHINGOBJECTMENU">
                     <shadow type="sensing_touchingobjectmenusprites"/>
                 </value>
+                            ${blockSeparator}
             </block>
             <block type="sensing_touchingcolor">
                 <value name="COLOR">
@@ -805,17 +806,6 @@ const sensing = function (isInitialSetup, isStage, targetId) {
                 </value>
                 <value name="COLOR2">
                     <shadow type="colour_picker"/>
-                </value>
-            </block>
-            ${blockSeparator}
-            <block type="sensing_getxyoftouchingsprite">
-                <value name="SPRITE">
-                    <shadow type="sensing_distancetomenu"/>
-                </value>
-            </block>
-            <block type="sensing_distanceto">
-                <value name="DISTANCETOMENU">
-                    <shadow type="sensing_distancetomenu"/>
                 </value>
             </block>
             <block type="sensing_distanceTo">
@@ -874,12 +864,6 @@ const sensing = function (isInitialSetup, isStage, targetId) {
             </block>
         `}
         <block id="answer" type="sensing_answer"/>
-        <block type="sensing_thing_is_text">
-            <value name="TEXT1">
-                <shadow type="text">
-                    <field name="TEXT">world</field>
-                </shadow>
-            </value>
         </block>
         <block type="sensing_thing_is_number">
             <value name="TEXT1">
@@ -887,6 +871,13 @@ const sensing = function (isInitialSetup, isStage, targetId) {
                     <field name="TEXT">10</field>
                 </shadow>
             </value>
+            <block type="sensing_thing_has_number">
+            <value name="TEXT1">
+                <shadow type="text">
+                    <field name="TEXT">10</field>
+                </shadow>
+            </value>
+                    <block id="loudness" type="sensing_loud"/>
         </block>
         ${blockSeparator}
         <block type="sensing_keypressed">
@@ -926,7 +917,6 @@ const sensing = function (isInitialSetup, isStage, targetId) {
         `}
         ${blockSeparator}
         <block id="loudness" type="sensing_loudness"/>
-        <block id="loud" type="sensing_loud"/>
         ${blockSeparator}
         <block type="sensing_resettimer"/>
         <block id="timer" type="sensing_timer"/>
