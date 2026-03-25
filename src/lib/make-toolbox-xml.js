@@ -30,6 +30,13 @@ const motion = function (isInitialSetup, isStage, targetId) {
                 </shadow>
             </value>
         </block>
+         <block type="motion_movebacksteps">
+            <value name="STEPS">
+                <shadow type="math_number">
+                    <field name="NUM">10</field>
+                </shadow>
+            </value>
+        </block>
         <block type="motion_turnright">
             <value name="DEGREES">
                 <shadow type="math_number">
@@ -452,32 +459,8 @@ const sound = function (isInitialSetup, isStage, targetId, soundName) {
                 </shadow>
             </value>
         </block>
-        <block id="${targetId}_sound_play_at_seconds_until_done" type="sound_play_at_seconds_until_done">
-            <value name="VALUE">
-                <shadow type="math_number">
-                    <field name="NUM">5</field>
-                </shadow>
-            </value>
-            <value name="SOUND_MENU">
-                <shadow type="sound_sounds_menu">
-                    <field name="SOUND_MENU">${soundName}</field>
-                </shadow>
-            </value>
-        </block>
         ${blockSeparator}
         <block id="${targetId}_sound_play" type="sound_play">
-            <value name="SOUND_MENU">
-                <shadow type="sound_sounds_menu">
-                    <field name="SOUND_MENU">${soundName}</field>
-                </shadow>
-            </value>
-        </block>
-        <block id="${targetId}_sound_play_at_seconds" type="sound_play_at_seconds">
-            <value name="VALUE">
-                <shadow type="math_number">
-                    <field name="NUM">5</field>
-                </shadow>
-            </value>
             <value name="SOUND_MENU">
                 <shadow type="sound_sounds_menu">
                     <field name="SOUND_MENU">${soundName}</field>
@@ -491,7 +474,6 @@ const sound = function (isInitialSetup, isStage, targetId, soundName) {
                 </shadow>
             </value>
         </block>
-        <block type="sound_playallsounds"/>
         <block type="sound_stopallsounds"/>
         ${blockSeparator}
         <block id="${targetId}_sound_set_stop_fadeout_to" type="sound_set_stop_fadeout_to">
