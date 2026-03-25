@@ -1204,7 +1204,23 @@ const operators = function (isInitialSetup) {
                 <shadow type="checkbox" />
             </value>
         </block>
+        <block type="operator_nand">
+            <value name="OPERAND1">
+                <shadow type="checkbox" />
+            </value>
+            <value name="OPERAND2">
+                <shadow type="checkbox" />
+            </value>
+        </block>
         <block type="operator_or">
+            <value name="OPERAND1">
+                <shadow type="checkbox" />
+            </value>
+            <value name="OPERAND2">
+                <shadow type="checkbox" />
+            </value>
+        </block>
+        <block type="operator_xor">
             <value name="OPERAND1">
                 <shadow type="checkbox" />
             </value>
@@ -1216,15 +1232,7 @@ const operators = function (isInitialSetup) {
             <value name="OPERAND">
                 <shadow type="checkbox" />
             </value>
-        </block>
-        <block type="operator_expandableBool">
-            <mutation inputcount="2" menuvalues=""></mutation>
-            <value name="BOOL1">
-                <shadow type="checkbox"><field name="CHECKBOX"></field></shadow>
-            </value>
-            <value name="BOOL2">
-                <shadow type="checkbox"><field name="CHECKBOX"></field></shadow>
-            </value>
+
         </block>
         ${blockSeparator}
         ${isInitialSetup ? '' : `
@@ -1243,41 +1251,16 @@ const operators = function (isInitialSetup) {
                     </shadow>
                 </value>
             </block>
-            <block type="operator_expandablejoininputs">
-                <mutation inputcount="2"></mutation>
-                <value name="INPUT1">
-                    <shadow type="text">
-                        <field name="TEXT">apple</field>
-                    </shadow>
-                </value>
-                <value name="INPUT2">
-                    <shadow type="text">
-                        <field name="TEXT">banana</field>
-                    </shadow>
-                </value>
-            </block>
             ${blockSeparator}
             <block type="operator_indexOfTextInText">
                 <value name="TEXT1">
                     <shadow type="text">
-                        <field name="TEXT">world</field>
+                        <field name="TEXT">lo</field>
                     </shadow>
                 </value>
                 <value name="TEXT2">
                     <shadow type="text">
-                        <field name="TEXT">Hello world!</field>
-                    </shadow>
-                </value>
-            </block>
-            <block type="operator_lastIndexOfTextInText">
-                <value name="TEXT1">
-                    <shadow type="text">
-                        <field name="TEXT">world</field>
-                    </shadow>
-                </value>
-                <value name="TEXT2">
-                    <shadow type="text">
-                        <field name="TEXT">Hello world!</field>
+                        <field name="TEXT">Hello!</field>
                     </shadow>
                 </value>
             </block>
@@ -1334,66 +1317,14 @@ const operators = function (isInitialSetup) {
             <block type="operator_textStartsOrEndsWith" id="operator_textStartsOrEndsWith">
               <value name="TEXT1">
                 <shadow type="text">
-                  <field name="TEXT">abcdef</field>
+                  <field name="TEXT">apple</field>
                 </shadow>
               </value>
               <value name="TEXT2">
                 <shadow type="text">
-                  <field name="TEXT">abc</field>
+                  <field name="TEXT">a</field>
                 </shadow>
               </value>
-            </block>
-            ${blockSeparator}
-            <block type="operator_replaceAll">
-                <value name="text">
-                    <shadow type="text">
-                        <field name="TEXT">foo bar</field>
-                    </shadow>
-                </value>
-                <value name="term">
-                    <shadow type="text">
-                        <field name="TEXT">foo</field>
-                    </shadow>
-                </value>
-                <value name="res">
-                    <shadow type="text">
-                        <field name="TEXT">bar</field>
-                    </shadow>
-                </value>
-            </block>
-            <block type="operator_replaceFirst">
-                <value name="text">
-                    <shadow type="text">
-                        <field name="TEXT">bar bar doo</field>
-                    </shadow>
-                </value>
-                <value name="term">
-                    <shadow type="text">
-                        <field name="TEXT">bar</field>
-                    </shadow>
-                </value>
-                <value name="res">
-                    <shadow type="text">
-                        <field name="TEXT">foo</field>
-                    </shadow>
-                </value>
-            </block>
-            <block type="operator_regexmatch">
-                <value name="text">
-                    <shadow type="text">
-                        <field name="TEXT">foo bar</field>
-                    </shadow>
-                </value>
-                <value name="reg">
-                    <shadow type="text">
-                        <field name="TEXT">foo</field>
-                    </shadow>
-                </value>
-                <value name="regrule">
-                    <shadow type="text">
-                        <field name="TEXT">g</field>
-                    </shadow>
-                </value>
             </block>
             ${blockSeparator}
             <block type="operator_toUpperLowerCase">
@@ -1429,21 +1360,6 @@ const operators = function (isInitialSetup) {
             <value name="NUM">
                 <shadow type="math_number">
                     <field name="NUM"/>
-                </shadow>
-            </value>
-        </block>
-        ${blockSeparator}
-        <block type="operator_stringify">
-            <value name="ONE">
-                <shadow type="text">
-                    <field name="TEXT">foo</field>
-                </shadow>
-            </value>
-        </block>
-        <block type="operator_boolify">
-            <value name="ONE">
-                <shadow type="text">
-                    <field name="TEXT">true</field>
                 </shadow>
             </value>
         </block>
