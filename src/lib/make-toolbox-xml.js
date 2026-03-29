@@ -575,15 +575,17 @@ const events = function (isInitialSetup, isStage) {
         <block type="event_whenstopclicked"/>
         ${blockSeparator}
         <block type="event_always"></block>
-        <block type="event_whenanything">
-            <value name="ANYTHING">
-                <shadow type="checkbox" />
-            </value>
+
         </block>
         ${blockSeparator}
         <block type="event_whenkeypressed"></block>
         <block type="event_whenkeyhit"></block>
         <block type="event_whenmousescrolled"></block>
+                ${blockSeparator}
+        <block type="event_whenanything">
+            <value name="ANYTHING">
+                <shadow type="checkbox" />
+            </value>
         ${isStage ? `
             <block type="event_whenstageclicked"/>
         ` : `
