@@ -1408,7 +1408,18 @@ const liveTests = function () {
         <block type="procedures_call">
             <mutation proccode="tw:debugger;" argumentids="[]" warp="false" returns="null" edited="true" optype="null"></mutation>
         </block>
-        ${blockSeparator}
+        ${blockSeparator}            <block type="operator_lastIndexOfTextInText">
+                <value name="TEXT1">
+                    <shadow type="text">
+                        <field name="TEXT">world</field>
+                    </shadow>
+                </value>
+                <value name="TEXT2">
+                    <shadow type="text">
+                        <field name="TEXT">Hello world!</field>
+                    </shadow>
+                </value>
+            </block>
         <block type="operator_checkboxBoolean"></block>
         <block type="control_fieldbutton"></block>
         <block type="motion_mutatorCheckboxTest"></block>
