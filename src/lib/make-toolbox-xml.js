@@ -648,13 +648,6 @@ const control = function (isInitialSetup, isStage) {
             </value>
         </block>
         <block id="forever" type="control_forever"/>
-        <block id="for_each" type="control_for_each">
-            <value name="VALUE">
-                <shadow type="math_whole_number">
-                    <field name="NUM">10</field>
-                </shadow>
-            </value>
-        </block>
         <block type="control_exitLoop"/>
         <block type="control_continueLoop"/>
         ${blockSeparator}
@@ -678,12 +671,6 @@ const control = function (isInitialSetup, isStage) {
         ${blockSeparator}
         <block type="control_expandableIf">
             <mutation branches="1" ends-in-else="false"></mutation>
-            <value name="BOOL1">
-                <shadow type="checkbox"></shadow>
-            </value>
-        </block>
-        <block type="control_expandableIf">
-            <mutation branches="2" ends-in-else="true"></mutation>
             <value name="BOOL1">
                 <shadow type="checkbox"></shadow>
             </value>
@@ -719,11 +706,11 @@ const control = function (isInitialSetup, isStage) {
                 <shadow type="checkbox" />
             </value>
         </block>
-        ${blockSeparator}
-        <block type="control_all_at_once"/>
-        <block type="control_run_as_sprite">
-            <value name="RUN_AS_OPTION">
-                <shadow type="control_run_as_sprite_menu"/>
+         <block id="for_each" type="control_for_each">
+            <value name="VALUE">
+                <shadow type="math_whole_number">
+                    <field name="NUM">10</field>
+                </shadow>
             </value>
         </block>
         ${blockSeparator}
@@ -737,6 +724,8 @@ const control = function (isInitialSetup, isStage) {
         </block>
         <block type="control_error"/>
         ${blockSeparator}
+                <block type="control_all_at_once"/>
+                ${blockSeparator}
         <block type="control_backToGreenFlag"></block>
         <block type="control_stop_sprite">
             <value name="STOP_OPTION">
@@ -770,6 +759,12 @@ const control = function (isInitialSetup, isStage) {
             </block>
             <block type="control_delete_this_clone"/>
             <block type="control_is_clone"/>
+                    ${blockSeparator}
+        <block type="control_run_as_sprite">
+            <value name="RUN_AS_OPTION">
+                <shadow type="control_run_as_sprite_menu"/>
+            </value>
+        </block>
         `}
         ${LazyScratchBlocks.isNameUrMom() ? '<block type="your_mom"/>' : ''}
         ${categorySeparator}
@@ -1194,18 +1189,10 @@ const operators = function (isInitialSetup) {
                 </shadow>
             </value>
         </block>
-        <block type="operator_expandableCompare">
-        <mutation inputcount="2" menuvalues=""></mutation>
-            <value name="INPUT1">
-                <shadow type="text"><field name="TEXT"></field></shadow>
-            </value>
-            <value name="INPUT2">
-                <shadow type="text"><field name="TEXT"></field></shadow>
-            </value>
-        </block>
         ${blockSeparator}
         <block type="operator_trueBoolean"></block>
         <block type="operator_falseBoolean"></block>
+                <block type="operator_randomBoolean"></block>
         ${blockSeparator}
         <block type="operator_and">
             <value name="OPERAND1">
@@ -1288,7 +1275,7 @@ const operators = function (isInitialSetup) {
                     </shadow>
                 </value>
             </block>
-            <block type="operator_getLettersFromIndexToIndexInTextFixed">
+            <block type="operator_getLettersFromIndexToIndexInText">
                 <value name="INDEX1">
                     <shadow type="math_number">
                         <field name="NUM">2</field>
