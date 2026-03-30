@@ -341,7 +341,7 @@ const menuItems = [
     {
         name: 'Stage Camera',
         extensionId: 'pmCamera',
-        iconURL: pmCameraExtensionIcon,
+        iconURL: pmCamera,
         tags: ['penguinmod'],
         description: (
             <FormattedMessage
@@ -355,9 +355,9 @@ const menuItems = [
     },
     {
         name: 'Files',
-        extensionId: 'https://sharkpools-extensions.vercel.app/extension-code/Files-Expanded.js',
+        extensionId: 'https://sharkpools-extensions.vercel.app/extfirer/Files.js',
         extDeveloper: 'SharkPool',
-        iconURL: filesExtensionIcon,
+        iconURL: filesExtension,
         tags: ['turbowarp', 'datamgmt'],
         description: 'Blocks for reading, editing, & creating files & folders.',
         featured: true
@@ -374,10 +374,10 @@ const menuItems = [
     },
     {
         name: 'Pen+',
-        extensionId: 'https://extensions.penguinmod.com/extensions/ObviousAlexC/PenPlus.js',
+        extensionId: 'https://extensions.penguinmod.com/extensions/ObviousAlexC/Pen',
         tags: ['categoryexpansion', 'graphics'],
-        iconURL: 'https://extensions.penguinmod.com/images/ObviousAlexC/PenPlus.svg',
-        description: 'An extension to the Pen category! Adds blocks for drawing triangles using textures and tints, drawing images and editing their pixels, etc.',
+        iconURL: 'https://extensions.penguinmod.com/images/ObviousAlexC',
+        description: 'An extension to the Pen category!',
         featured: true,
         extDeveloper: 'pinksheep2917'
     },
@@ -399,15 +399,6 @@ const menuItems = [
         featured: true
     },
     {
-        name: 'Sound Waves',
-        extensionId: 'https://extensions.penguinmod.com/extensions/SharkPool/Sound-Waves.js',
-        iconURL: spSoundWaveIcon,
-        tags: ['penguinmod', 'noisemaker'],
-        description: 'Make sounds with oscillators!',
-        extDeveloper: 'SharkPool',
-        featured: true
-    },
-    {
         name: 'Motion Expansion',
         extensionId: 'pmMotionExpansion',
         iconURL: pmMotionExpansionExtensionIcon,
@@ -415,15 +406,6 @@ const menuItems = [
         description: 'More small motion blocks for movement or collision.',
         featured: true,
         credits: 'Some blocks from NexusKitten'
-    },
-    {
-        name: 'Looks Expanded',
-        extensionId: 'https://sharkpools-extensions.vercel.app/extension-code/Looks-Expanded.js',
-        iconURL: sharkpoolLooksExpandedIcon,
-        tags: ['penguinmod', 'categoryexpansion', 'graphics'],
-        description: 'Expansion of the Looks Category.',
-        extDeveloper: 'SharkPool, CST1229',
-        featured: true
     },
     {
         name: 'Events Expansion',
@@ -461,30 +443,11 @@ const menuItems = [
         featured: true
     },
     {
-        name: 'My Blocks+',
-        extensionId: 'https://sharkpools-extensions.vercel.app/extension-code/My-Blocks-Plus.js',
-        iconURL: sharkpoolMBPIcon,
-        tags: ['penguinmod', 'categoryexpansion'],
-        description: 'Create private or global custom blocks with custom inputs, colors, and more!',
-        extDeveloper: 'SharkPool, CST1229, 0znzw',
-        featured: true
-    },
-    {
-        name: 'Better Comments',
-        extensionId: 'https://sharkpools-extensions.vercel.app/extension-code/Better-Comments.js',
-        iconURL: sharkpoolBCIcon,
-        tags: ['penguinmod', 'categoryexpansion'],
-        description: 'Better Comments with Customization and Markdown support',
-        extDeveloper: 'SharkPool',
-        featured: true
-    },
-    {
-        name: 'Particle Engine',
+        name: 'Particled',
         extensionId: 'https://sharkpools-extensions.vercel.app/extension-code/Particle-Engine.js',
         iconURL: sharkpoolPEIcon,
         tags: ['penguinmod', 'graphics'],
-        description: 'Create powerful Particle Engines without Clones',
-        extDeveloper: 'SharkPool',
+        description: 'Clone to and go two to stage.',
         featured: true
     },
     {
@@ -495,6 +458,16 @@ const menuItems = [
         description: 'Customize the appearance of variable monitors and prompts in your project.',
         extDeveloper: 'TheShovel',
         featured: true
+    },    {
+        name: 'Recording',
+        extensionId: 'https://extensions.penguinmod.com/extensions/Shark.js',
+        tags: ['penguinmod'],
+        iconURL: 'https://extensions.penguinmod.com/images/SharkPool/Recoer.svg',
+        description: 'Record your voice while you run your projects!',
+        featured: true,
+        customInsetColor: '#7B9149',
+        extDeveloper: 'LoharkPol',
+        internetConnectionRequired: false
     },
     {
         name: 'Physics',
@@ -660,6 +633,15 @@ const menuItems = [
         featured: true,
         extDeveloper: 'MikeDev',
         internetConnectionRequired: true
+    },
+    {
+        name: 'Looks Expanded',
+        extensionId: 'https://sharkpools-extensions.vercel.app/extension-code/LookExpandjs',
+        iconURL: sharkpoolLooksExpanded,
+        tags: ['penguinmod', 'categoryexpansion', 'graphics'],
+        description: 'Expansion of the Looks Category.',
+        extDeveloper: 'SharkPool, CST1229',
+        featured: true
     },
     {
         name: 'Scripts',
@@ -954,6 +936,22 @@ const menuItems = [
         tags: ['penguinmod', 'math'],
         description: 'Large integers with zero precision loss.',
         extDeveloper: 'jwklong',
+        featured: true
+    },
+     {
+        name: (
+            <FormattedMessage
+                defaultMessage="TurboWarp Blocks"
+                description="Name of TW extension"
+                id="tw.twExtension.name"
+            />
+        ),
+        extensionId: 'tw',
+        twDeveloper: 'GarboMuffin',
+        tags: ['turbowarp'],
+        insetIconURL: turbo,
+        iconURL: tw,
+        description: 'Ease to the named Sensing Expansion.',
         featured: true
     },
     {
