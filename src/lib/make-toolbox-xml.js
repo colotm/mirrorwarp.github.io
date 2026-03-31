@@ -883,7 +883,7 @@ const sensing = function (isInitialSetup, isStage, targetId) {
                     <field name="TEXT">10</field>
                 </shadow>
             </value>
-                    <block id="loudness" type="sensing_loud"/>
+                    <block id="loud" type="sensing_loud"/>
         </block>
         ${blockSeparator}
         <block type="sensing_keypressed">
@@ -907,6 +907,23 @@ const sensing = function (isInitialSetup, isStage, targetId) {
         <block type="sensing_mousex"/>
         <block type="sensing_mousey"/>
         ${blockSeparator}
+                <label text="Motion Menus"></label>
+        <block type="motion_goto_menu"/>
+        <block type="motion_pointtowards_menu"/>
+    
+        <label text="Looks Menus"></label>
+        <block type="looks_costume"/>
+        <block type="looks_backdrops"/>
+        <block type="looks_getinput_menu"/>
+        <label text="Sound Menus"></label>
+        <block type="sound_sounds_menu"/>
+        <label text="Events Menus"></label>
+        <block type="event_touchingobjectmenu"/>
+        <block type="event_broadcast_menu"/>
+        <label text="Control Menus"></label>
+        <block type="control_run_as_sprite_menu"/>
+        <block type="control_create_clone_of_menu"/>
+            ${blockSeparator}
         <block type="sensing_setclipboard">
             <value name="ITEM">
                 <shadow type="text">
@@ -1368,24 +1385,6 @@ const operators = function (isInitialSetup) {
 const selectors = function () {
     return `
     <category name="%{BKY_CATEGORY_MENUS}" id="selectors" colour="#C6D226" secondaryColour="#A2AB1F">
-        <label text="Motion Menus"></label>
-        <block type="motion_goto_menu"/>
-        <block type="motion_pointtowards_menu"/>
-    
-        <label text="Looks Menus"></label>
-        <block type="looks_costume"/>
-        <block type="looks_backdrops"/>
-        <block type="looks_getinput_menu"/>
-        <label text="Sound Menus"></label>
-        <block type="sound_sounds_menu"/>
-        <label text="Events Menus"></label>
-        <block type="event_touchingobjectmenu"/>
-        <block type="event_broadcast_menu"/>
-        <label text="Control Menus"></label>
-        <block type="control_run_as_sprite_menu"/>
-        <block type="control_create_clone_of_menu"/>
-    
-        <label text="Sensing Menus"></label>
         <block type="sensing_touchingobjectmenu"/>
         <block type="sensing_keyoptions"/>
         <block type="sensing_scrolldirections"/>
