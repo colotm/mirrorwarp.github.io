@@ -1359,6 +1359,7 @@ const operators = function (isInitialSetup) {
                 </shadow>
             </value>
         </block>
+        <block type="operator_round">
         ${blockSeparator}
         <block type="operator_mathop">
             <value name="NUM">
@@ -1367,6 +1368,14 @@ const operators = function (isInitialSetup) {
                 </shadow>
             </value>
         </block>
+          <block type="operator_boolify">
+            <value name="ONE">
+                <shadow type="text">
+                    <field name="TEXT">bool</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="operator_randomBoolean">
         ${blockSeparator}
         <block type="operator_stringify">
             <value name="ONE">
@@ -1375,13 +1384,7 @@ const operators = function (isInitialSetup) {
                 </shadow>
             </value>
         </block>
-        <block type="operator_boolify">
-            <value name="ONE">
-                <shadow type="text">
-                    <field name="TEXT">true</field>
-                </shadow>
-            </value>
-        </block>
+    
         ${categorySeparator}
     </category>
     `;
