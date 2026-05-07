@@ -212,6 +212,15 @@ const menuItems = [
         featured: true
     },
     {
+        name: '3D Math',
+        extensionId: 'https://extensions.penguinmod.com/extensions/ObviousAlexC/3DMath.js',
+        iconURL: 'https://extensions.penguinmod.com/images/ObviousAlexC/3DMath.svg',
+        tags: ['penguinmod', '3d', 'graphics', 'math'],
+        description: 'A handful of utilities for making your own sprite-based 3D engine.',
+        extDeveloper: 'pinksheep2917',
+        featured: true
+    }, 
+    {
         name: (
             <FormattedMessage
                 defaultMessage="Pen"
@@ -345,7 +354,7 @@ const menuItems = [
         tags: ['penguinmod'],
         description: (
             <FormattedMessage
-                defaultMessage="Allows the camera to move around anywhere on the stage."
+                defaultMessage="Allows the to choose a color using the built-in colorthe stage."
                 description="The description for the PenguinMod Camera extension."
                 id="pm.extension.camera.description"
             />
@@ -668,25 +677,10 @@ const menuItems = [
         tags: ['penguinmod', 'datamgmt'],
         description: 'Create compiled scripts with blocks while the project is running.',
         featured: true
+ 
+
     },
-    {
-        name: 'Pang API',
-        extensionId: 'https://extensions.penguinmod.com/extensions/SammerLOL/pangapi.js',
-        iconURL: 'https://extensions.penguinmod.com/images/SammerLOL/pangapi.avif',
-        tags: ['penguinmod'],
-        description: 'Fetch information from the PenguinMod API.',
-        extDeveloper: 'oc9x97, Ianyourgod',
-        featured: true
-    },
-    {
-        name: '3D Math',
-        extensionId: 'https://extensions.penguinmod.com/extensions/ObviousAlexC/3DMath.js',
-        iconURL: 'https://extensions.penguinmod.com/images/ObviousAlexC/3DMath.svg',
-        tags: ['penguinmod', '3d', 'graphics', 'math'],
-        description: 'A handful of utilities for making your own sprite-based 3D engine.',
-        extDeveloper: 'pinksheep2917',
-        featured: true
-    },
+   
     {
         name: 'Random Utilities',
         extensionId: 'https://extensions.penguinmod.com/extensions/Gen1x/random_utils.js',
@@ -722,15 +716,7 @@ const menuItems = [
         featured: true,
         internetConnectionRequired: true
     },
-    {
-        name: 'Color Picker',
-        extensionId: 'shovelColorPicker',
-        iconURL: theshovelColorPickerIcon,
-        tags: ['penguinmod'],
-        description: 'Allow the user to choose a color using the built-in color picker, so you don\'t need to make your own.',
-        extDeveloper: 'TheShovel',
-        featured: true
-    },
+ 
     {
         name: (
             <FormattedMessage
@@ -856,107 +842,7 @@ const menuItems = [
         description: 'Run your own custom code written in JavaScript!',
         featured: true
     },
-    {
-        name: 'Arrays',
-        extensionId: 'jwArray',
-        iconURL: jwArrayExtensionThumb,
-        tags: ['penguinmod', 'datamgmt'],
-        description: 'Store data efficiently in multi-purpose arrays.',
-        extDeveloper: 'jwklong',
-        featured: true
-    },
-    {
-        name: 'Objects',
-        extensionId: 'https://extensions.penguinmod.com/extensions/DogeisCut/dogeiscutObject.js',
-        iconURL: 'https://extensions.penguinmod.com/images/DogeisCut/dogeiscutObject.svg',
-        tags: ['penguinmod', 'datamgmt'],
-        description: 'Store data efficiently in multi-purpose objects.',
-        extDeveloper: 'DogeisCut',
-        featured: true
-    },
-    {
-        name: 'XML',
-        extensionId: 'jwXML',
-        iconURL: jwXMLExtensionIcon,
-        tags: ['penguinmod', 'datamgmt'],
-        description: 'Creating, parsing and modifying XML data.',
-        extDeveloper: 'jwklong',
-        featured: true
-    },
-    {
-        name: 'Targets',
-        extensionId: 'jwTargets',
-        iconURL: jwTargetsExtensionThumb,
-        tags: ['penguinmod'],
-        description: 'Direct access to sprites and their clones.',
-        extDeveloper: 'jwklong',
-        featured: true
-    },
-    {
-        name: 'Infinity',
-        extensionId: 'jwNum',
-        iconURL: jwNumExtensionThumb,
-        tags: ['penguinmod', 'math'],
-        description: 'Advanced number type capable of really big numbers.',
-        extDeveloper: 'jwklong',
-        credits: 'Naruyoko for ExpantaNum.js',
-        featured: true
-    },
-    {
-        name: 'Color',
-        extensionId: 'jwColor',
-        iconURL: jwColorExtensionThumb,
-        tags: ['penguinmod', 'graphics'],
-        description: 'Utilities for anything involving colors.',
-        extDeveloper: 'jwklong',
-        featured: true
-    },
-    {
-        name: 'Vector',
-        extensionId: 'jwVector',
-        iconURL: jwVectorExtensionThumb,
-        tags: ['penguinmod', 'math'],
-        description: 'Vector type for calculating with X and Y coordinates.',
-        extDeveloper: 'jwklong',
-        featured: true
-    },
-    {
-        name: 'Lambda',
-        extensionId: 'jwLambda',
-        iconURL: jwLambdaExtensionThumb,
-        tags: ['penguinmod'],
-        description: 'Create anonymous functions with arguments and execute them.',
-        extDeveloper: 'jwklong',
-        featured: true
-    },
-    {
-        name: 'Scope',
-        extensionId: 'jwScope',
-        iconURL: jwScopeExtensionThumb,
-        tags: ['penguinmod'],
-        description: 'Temporary variables based on block stack. (extra blocks if used with Array extension)',
-        extDeveloper: 'jwklong',
-        featured: true
-    },
-    {
-        name: 'Pointers',
-        extensionId: 'jwPointer',
-        iconURL: jwPointerExtensionThumb,
-        tags: ['penguinmod', 'datamgmt'],
-        description: 'Define references to values. (extra blocks if used with Array extension)',
-        extDeveloper: 'jwklong',
-        featured: true
-    },
-    {
-        name: 'Integers',
-        extensionId: 'jwInt',
-        iconURL: jwIntExtensionThumb,
-        tags: ['penguinmod', 'math'],
-        description: 'Large integers with zero precision loss.',
-        extDeveloper: 'jwklong',
-        featured: true
-    },
-    {
+     {
         name: 'micro:bit',
         extensionId: 'microbit',
         collaborator: 'micro:bit',
@@ -987,6 +873,36 @@ const menuItems = [
         ),
         helpLink: 'https://scratch.mit.edu/microbit'
     },
+    {
+        name: 'Arrays',
+        extensionId: 'jwArray',
+        iconURL: jwArrayExtensionThumb,
+        tags: ['penguinmod', 'datamgmt'],
+        description: 'Store data efficiently in multi-purpose arrays.',
+        extDeveloper: 'jwklong',
+        featured: true
+    },
+    {
+        name: 'Targets',
+        extensionId: 'jwTargets',
+        iconURL: jwTargetsExtensionThumb,
+        tags: ['penguinmod'],
+        description: 'Direct access to sprites and their clones.',
+        extDeveloper: 'jwklong',
+        featured: true
+    },
+
+    {
+        name: 'Pointers',
+        extensionId: 'jwPointer',
+        iconURL: jwPointerExtensionThumb,
+        tags: ['penguinmod', 'datamgmt'],
+        description: 'Define references to values. (extra blocks if used with Array extension)',
+        extDeveloper: 'jwklong',
+        featured: true
+    },
+ 
+
     {
         name: 'LEGO MINDSTORMS EV3',
         extensionId: 'ev3',
@@ -1172,83 +1088,8 @@ const menuItems = [
         credits: 'Listed in the site',
         tags: ['library'],
         featured: true
-    },{
-        // not really an extension, but it's easiest to present it as one
-        name: 'ExtForge',
-        href: 'https://jwklong.github.io/extforge',
-        extensionId: 'special_extforge',
-        iconURL: ExtForgeIcon,
-        description: 'Create extensions with a block-based UI.',
-        extDeveloper: 'jwklong',
-        isNew: true,
-        tags: ['extcreate'],
-        featured: true
     },
-    {
-        // not really an extension, but it's easiest to present it as one
-        name: (
-            <FormattedMessage
-                defaultMessage="Custom Extension"
-                description="Name of library item to load a custom extension from a remote source"
-                id="tw.customExtension.name"
-            />
-        ),
-        extensionId: '',
-        iconURL: customExtensionIcon,
-        description: (
-            <FormattedMessage
-                defaultMessage="Load custom extensions from URLs, files, or JavaScript source code."
-                description="Description of library item to load a custom extension from a custom source"
-                id="tw.customExtension.description"
-            />
-        ),
-        featured: true
-    }
-    /*DEPRECATED
-    {
-        name: 'JSON',
-        extensionId: 'jgJSON',
-        iconURL: jgJSONExtensionIcon,
-        tags: ['penguinmod', 'datamgmt'],
-        description: 'Blocks for handling JSON objects and Arrays.',
-        featured: true
-    },
-    {
-        name: 'Color Utility Blocks',
-        extensionId: 'colors',
-        iconURL: gsaColorUtilExtensionIcon,
-        tags: ['penguinmod'],
-        description: 'Converters for Hex, RGB, HSV and Decimal colors and other color related things.',
-        featured: true
-    },
-    {
-        name: 'Odd Messages',
-        extensionId: 'oddMessage',
-        tags: ['penguinmod'],
-        iconURL: silvxrcatOddMessagesExtensionIcon,
-        description: 'For logging and variable utilization.',
-        featured: true,
-        extDeveloper: 'silvxrcat'
-    },
-    {
-        name: 'Extra Mathematics',
-        extensionId: 'https://extensions.penguinmod.com/extensions/jwklong/mathematics.js',
-        iconURL: 'https://extensions.penguinmod.com/images/jwklong/mathematics.avif',
-        tags: ['penguinmod', 'categoryexpansion', 'math'],
-        description: 'Complicated maths extension for nerds.',
-        extDeveloper: 'jwklong',
-        featured: false
-    },
-    {
-        name: 'All Menus',
-        extensionId: 'https://extensions.penguinmod.com/extensions/Lily/AllMenus.js',
-        iconURL: 'https://extensions.penguinmod.com/images/Lily/AllMenus.svg',
-        tags: ['penguinmod'],
-        description: 'Every dropdown menu for each block, in one extension.',
-        extDeveloper: 'LilyMakesThings',
-        featured: true
-    },
-    {
+     {
         // not really an extension, but it's easiest to present it as one
         name: 'TurboBuilder',
         href: 'https://turbobuilder.vercel.app/',
@@ -1270,21 +1111,19 @@ const menuItems = [
         credits: 'Started by JeremyGamer13, continued by jwklong',
         tags: ['extcreate'],
         featured: true
-    },*/
-];
-
-/*
-----------------------------------------------
-### NOTE TO PENGUINMOD FORKS: ###
-Please DO NOT make the extensions below accessible in the editor without livetests!
-They are NOT fully developed for people to use and create full projects with!
-
-These extensions could have missing features, cause random errors, broken projects, or even crash the editor!
-Moving these into the main extension list will cause people who use your fork to assume they are ready for them to use!
-
-Please keep these in livetests to reduce bug reports on your fork! :)
-----------------------------------------------
-*/
+    },  {
+        // not really an extension, but it's easiest to present it as one
+        name: 'Extforge',
+        href: 'https://www.jwklextforge..com',
+        extensionId: 'special_extforge',
+        iconURL: ExtForgeIcon,
+        description: 'Create extensions with a block-based UI.',
+        extDeveloper: 'jwklong',
+        isNew: true,
+        tags: ['extcreate'],
+        featured: true
+    }
+  
 if (IsLocal || IsLiveTests) {
     const extras = [
         {
