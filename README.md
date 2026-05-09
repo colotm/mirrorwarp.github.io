@@ -1,5 +1,4 @@
-scratch-gui modified for use in [TurboWarp](https://turbowarp.org/)
-
+scratch-gui modified for use in [TurboWarp](https://turbowarp.org/) [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://turbomirror.gaia.org)
 ## Setup
 
 See https://docs.turbowarp.org/development/getting-started to setup the complete TurboWarp environment.
