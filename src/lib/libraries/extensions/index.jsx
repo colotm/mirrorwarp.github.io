@@ -856,7 +856,7 @@ const menuItems = [
         description: 'Run your own custom code written in JavaScript!',
         featured: true
     },
-    {
+    /*{
         name: 'Arrays',
         extensionId: 'jwArray',
         iconURL: jwArrayExtensionThumb,
@@ -892,7 +892,7 @@ const menuItems = [
         description: 'Utilities for anything involving colors.',
         extDeveloper: 'jwklong',
         featured: true
-    },
+    },*/
     {
         name: 'micro:bit',
         extensionId: 'microbit',
