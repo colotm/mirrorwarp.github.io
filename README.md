@@ -1,5 +1,8 @@
-scratch-gui modified for use in [TurboWarp](https://turbowarp.org/) then modified for use in [PenguinMod](https://studio.penguinmod.com) 😀
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/PenguinMod/penguinmod.github.io/)
+scratch-gui modified for use in TurboWarp then modified for use in PenguinMod then modified for use in DinosaurMod then modified for use in PoopMod then modified for use in NitroBolt then modified for use in CraftMod then modified for use in FairyMod 😀 Build with Ona
+## Mods
+[TurboWarp](https://turbowarp.org/)
+
+[PenguinMod](https://studio.penguinmod.com/)
 ## Setup
 
 See https://docs.turbowarp.org/development/getting-started to setup the complete TurboWarp environment.
