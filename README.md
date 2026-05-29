@@ -1,14 +1,13 @@
 # Scratch++
 #### Scratch++ is a Scratch mod that adds new blocks which can compile to normal Scratch. This allows for easily building advanced Scratch projects, which you can share normally.
-
+scratch-gui modified for use in [ZHMushroom](https://ZXMushroom63.github.io/scratch-gui)
 
 ## How to use
 Example:
 In the editor, write a script with a new block (like the power operator).
-```scratchblocks
+scratchblocks
 when 🏳️ clicked
 say ( 5 ^ 3 )
-```
 Then, click on `File` > `Compile to Scratch (.sb3)`. It should download an sb3 file that is fully compatible with normal Scratch.
 
 ## Installation
@@ -80,7 +79,7 @@ You may want to review the documentation for [Jest](https://facebook.github.io/j
 
 See [jest cli docs](https://facebook.github.io/jest/docs/en/cli.html#content) for more options.
 
-### Running tests
+<!-- ### Running tests
 
 *NOTE: If you're a Windows user, please run these scripts in Windows `cmd.exe`  instead of Git Bash/MINGW64.*
 
@@ -273,4 +272,4 @@ Here's what will happen in the project state machine:
 7. The `SHOWING_WITH_ID` state. Now the project appears normally and is playable and editable.
 
 ## Donate
-We provide [Scratch](https://scratch.mit.edu) free of charge, and want to keep it that way! Please consider making a [donation](https://www.scratchfoundation.org/donate) to support our continued engineering, design, community, and resource development efforts. Donations of any size are appreciated. Thank you!
+We provide [Scratch](https://scratch.mit.edu) free of charge, and want to keep it that way! Please consider making a [donation](https://www.scratchfoundation.org/donate) to support our continued engineering, design, community, and resource development efforts. Donations of any size are appreciated. Thank you! --!>
