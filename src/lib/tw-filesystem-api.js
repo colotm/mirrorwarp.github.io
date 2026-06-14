@@ -9,7 +9,8 @@ const showSaveFilePicker = fileName => window.showSaveFilePicker({
             {
                 description: 'DinosaurMod Project',
                 accept: {
-                    'application/x.scratch.sb3': '.dino'
+                    
+                      'application/x.scratch.sb3': '.dino'
                 }
             },
             {
@@ -43,7 +44,7 @@ const showOpenFilePicker = async () => {
                 {
                     description: 'Supported Files',
                     accept: {
-                        'application/x.scratch.sb3': ['.dino', '.snail', '.pmp', '.pm', '.sb3', '.sb2', '.sb']
+                        'application/x.scratch.sb3': ['.tralala' '.dino', '.snail', '.pmp', '.pm', '.sb3', '.sb2', '.sb']
                     }
                 },
                 {
@@ -70,6 +71,12 @@ const showOpenFilePicker = async () => {
                         'application/x.scratch.sb3': ['.sb3', '.sb2', '.sb']
                     }
                 }
+                {
+                    description: 'Carmod Project',
+                    accept: {
+                        'application/x.scratch.sb3': ['.tralala']
+                    }
+            
             ]
         }),
     });
