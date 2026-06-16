@@ -684,18 +684,18 @@ const menuItems = [
         featured: true
     },
     {
-        name: 'Custom Styles',
+        name: 'my variables+',
         extensionId: 'shovelcss',
         iconURL: theshovelCustomStylesIcon,
         insetIconURL: PenguinmodThumb,
         customInsetColor: '#00c3ff',
         tags: ['penguinmod', 'graphics'],
-        description: 'Customize the appearance of variable monitors and prompts in your project.',
+        description: 'variables and stuff.',
         extDeveloper: 'TheShovel',
         featured: true
     },
     {
-        name: 'TurboWeather',
+        name: 'THE WEATHER',
         extensionId: 'https://extensions.penguinmod.com/extensions/RubyDevs/turboweather.js',
         iconURL: 'https://extensions.penguinmod.com/images/RubyDevs/turboweather.avif',
         insetIconURL: PenguinmodThumb,
@@ -788,16 +788,16 @@ const menuItems = [
         extensionId: 'https://extensions.penguinmod.com/extensions/SharkPool/Tile-Grids.js',
         iconURL: 'https://extensions.penguinmod.com/images/SharkPool/Tile-Grids.svg',
         tags: ['penguinmod'],
-        description: 'Place sprites on grids.',
+        description: 'I don't even know what the stinkin extension does',
         extDeveloper: 'SharkPool-SP',
         featured: true
     },
     {
-        name: 'Canvas Effects',
+        name: 'Effects an stuff.',
         extensionId: 'theshovelcanvaseffects',
         iconURL: theshovelCanvasEffectsIcon,
         tags: ['penguinmod', 'graphics'],
-        description: 'Apply visual effects to the entire stage.',
+        description: 'IF YOU PUT A 67BOM AT ONCE BLUUURRRRRRRRRRRR.',
         extDeveloper: 'TheShovel',
         insetIconURL: PenguinmodThumb,
         customInsetColor: '#00c3ff',
