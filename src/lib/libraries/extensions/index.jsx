@@ -517,14 +517,14 @@ const menuItems = [
     {
         name: 'Profanity API',
         extensionId: 'profanityAPI',
-        description: 'it doesn\'t censor all swear words yet.',
+        description: 'censors bad words and stuff.',
         iconURL: defaultExtensionIcon,
         featured: true
     },
     {
         name: 'Christmas',
         extensionId: 'jgChristmas',
-        description: 'use christmas particles',
+        description: 'use christmas particles and stuff.',
         tags: ['penguinmod'],
         insetIconURL: PenguinmodThumb,
         customInsetColor: '#00c3ff',
@@ -766,7 +766,7 @@ const menuItems = [
         name: 'Tweening',
         extensionId: 'jgTween',
         credits: 'easings.net & Arrow',
-        description: 'Smoothly animating values using different easing functions and directions.',
+        description: 'Smooth values and stuff.',
         iconURL: 'https://extensions.turbowarp.org/images/JeremyGamer13/tween.svg',
         tags: ['penguinmod'],
         insetIconURL: PenguinmodThumb,
@@ -829,7 +829,7 @@ const menuItems = [
         tags: ['turbowarp'],
         iconURL: 'https://extensions.turbowarp.org/images/true-fantom/base.svg',
         insetIconURL: turbowarpIcon,
-        description: "Convert numbers between bases.",
+        description: "Captain Underpants is cool.",
         customInsetColor: '#ff4d4d',
         featured: true,
         extDeveloper: 'TrueFantom'
@@ -1457,13 +1457,13 @@ const menuItems = [
         featured: true
     },
     {
-        name: 'Infinity',
+        name: 'Best mod ever',
         extensionId: 'jwNum',
         iconURL: 'https://studio.penguinmod.com/static/assets/03562df738acb5b29670d58970eb432f.svg',
         insetIconURL: PenguinmodThumb,
         customInsetColor: '#00c3ff',
         tags: ['penguinmod', 'math'],
-        description: 'Advanced number type capable of really big numbers.',
+        description: 'My FAVORITE extension.',
         extDeveloper: 'jwklong',
         credits: 'Naruyoko for ExpantaNum.js',
         featured: true
