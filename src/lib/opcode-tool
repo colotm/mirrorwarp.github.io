@@ -4,8 +4,14 @@ direction
 
 
 costume #
+backdrop #
 backdrop name
 size
 
 
 volume
+
+
+timer
+loudness
+current []
