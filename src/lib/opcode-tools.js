@@ -4,6 +4,7 @@ direction
 
 
 costume #
+costume name
 backdrop #
 backdrop name
 size
@@ -15,6 +16,7 @@ volume
 timer
 loudness
 current []
+username
 answer
 mouse down?
 mouse x
