@@ -1,24 +1,3 @@
-scratch-gui modified for use in [TurboWarp](https://turbowarp.org/)
-
-## Setup
-
-See https://github.com/TurboWarp/scratch-gui/wiki/Getting-Started to setup the complete TurboWarp environment.
-
-If you just want to play with the GUI then it's the same process as upstream scratch-gui.
-
-## License
-
-TurboWarp's modifications to Scratch are licensed under the GNU General Public License v3.0. See LICENSE or https://www.gnu.org/licenses/ for details.
-
-Original license for scratch-gui:
-
-```
-Copyright (c) 2016, Massachusetts Institute of Technology
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
-
-1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 
 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
